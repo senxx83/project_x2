@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yasssss</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Where do you want to go? 😆</h1>
+        <label for="location">Pick a place:</label>
+        <select name="location" id="location" required>
+            <option value="cinema">Cinema</option>
+            <option value="park">Park</option>
+            <option value="beach">Beach</option>
+            <option value="mall">Mall</option>
+        </select>
+        <!-- Button to move to the next page -->
+        <a href="food.html" class="btn" id="next-btn">Next</a>
+    </div>
+
+    <!-- JavaScript to save the selected value in localStorage -->
+    <script>
+        document.getElementById('next-btn').addEventListener('click', function(event) {
+            const location = document.getElementById('location').value;
+            localStorage.setItem('selectedLocation', location); // Save to localStorage
+        });
+    </script>
+</body>
+</html>

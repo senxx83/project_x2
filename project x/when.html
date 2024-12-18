@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>can't wait</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>When would you like to go?</h1>
+        <form id="final-form" action="https://formspree.io/f/xnnqkpky" method="POST">
+            <label for="date">Select a date:</label>
+            <input type="date" id="date" name="date" min="2025-01-01" max="2025-12-31" required>
+            
+            <!-- Back Button -->
+            <a href="food.html" class="btn">Back</a>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn" id="submit-btn">Submit :)</button>
+        </form>
+    </div>
+
+    <!-- JavaScript to combine data and send it to Formspree -->
+    <script>
+        // On form submission, combine all responses and add them to hidden fields
+        document.getElementById('final-form').addEventListener('submit', function(event) {
+            // Retrieve saved data from localStorage
+            const location = localStorage.getItem('selectedLocation') || 'Not provided';
+            const food = localStorage.getItem('selectedFood') || 'Not provided';
+            const date = document.getElementById('date').value;
+
+            // Add hidden fields to the form
+            const form = document.getElementById('final-form');
+            
+            const locationInput = document.createElement('input');
+            locationInput.type = 'hidden';
+            locationInput.name = 'Location';
+            locationInput.value = location;
+
+            const foodInput = document.createElement('input');
+            foodInput.type = 'hidden';
+            foodInput.name = 'Food';
+            foodInput.value = food;
+
+            // Append hidden fields to the form
+            form.appendChild(locationInput);
+            form.appendChild(foodInput);
+
+            // Optional: Clear localStorage after submission
+            localStorage.clear();
+        });
+    </script>
+</body>
+</html>

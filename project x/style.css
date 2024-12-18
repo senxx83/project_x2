@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(x_img.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background: #FADADD;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    font-family: sans-serif;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background: pink;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background 0.3s;
+}
+
+/* Make the "Yes" button bigger */
+.yes-btn {
+    font-size: 30rem; /* Larger text */
+    padding: 20px 40px; /* Larger padding for bigger size */
+}
+
+.btn:hover {
+    background:#E57373;
+}
+
+.btn.no-btn {
+    background: #d32f2f;
+}
+
+select, button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Sad Emoji Page */
+.sad-container {
+    background: none;
+    box-shadow: none;
+}
+
+.sad-

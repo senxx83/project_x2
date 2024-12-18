@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wooooo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>What would you like to eat? 😋</h1>
+        <label for="food">Pick a cuisine:</label>
+        <select name="food" id="food" required>
+            <option value="italian">Italian</option>
+            <option value="chinese">Chinese</option>
+            <option value="indian">Indian</option>
+            <option value="srilankan">ME</option>
+        </select>
+        <!-- Navigation Buttons -->
+        <a href="where.html" class="btn" id="back-btn">Back</a>
+        <a href="when.html" class="btn" id="next-btn">Next</a>
+    </div>
+
+    <!-- JavaScript to save the response in localStorage -->
+    <script>
+        // Load previous selection if available
+        const savedFood = localStorage.getItem('selectedFood');
+        if (savedFood) {
+            document.getElementById('food').value = savedFood;
+        }
+
+        // Save response when clicking "Next"
+        document.getElementById('next-btn').addEventListener('click', function(event) {
+            const food = document.getElementById('food').value;
+            localStorage.setItem('selectedFood', food); // Save to localStorage
+        });
+
+        // Optional: Save on "Back" click to ensure consistency
+        document.getElementById('back-btn').addEventListener('click', function(event) {
+            const food = document.getElementById('food').value;
+            localStorage.setItem('selectedFood', food); // Save to localStorage
+        });
+    </script>
+</body>
+</html>
